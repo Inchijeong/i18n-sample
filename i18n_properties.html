@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.i18n.properties.js"></script>
+
+</head>
+<body>
+    <h1 id="tit"></h1>
+    <div>
+        <p id="contents"></p>
+    </div>
+
+    <script>
+        jQuery(document).ready(function () {
+
+            jQuery.i18n.properties({
+                name:'msg',
+                path:'prop',
+                mode:'both',
+                language:'ko',
+                debug: true,
+                callback: function () {
+
+                    var output =  $.i18n.prop('msg_header');
+                    $('#tit').append(output);
+                    $('#contents').append(msg_contents);
+                }
+            });
+        });        
+    </script>
+</body>
+</html>
